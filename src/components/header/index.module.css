@@ -1,0 +1,27 @@
+.root {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 40px;
+    background: var(--secondary-colour);
+    box-shadow: 1px 1px 2px #8d4f02;
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+}
+
+.link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    background: none;
+    border: none;
+    color: var(--primary-colour);
+    font-size: 22px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.link:hover {
+    transform: scale(1.05);
+}
