@@ -38,6 +38,10 @@
     gap: 30px;
 }
 
+.highlight {
+    color: var(--secondary-colour-lighter);
+}
+
 @keyframes fade-in {
     0% {
         opacity: 0;
