@@ -5,7 +5,7 @@
     width: 100vw;
     height: 40px;
     background: var(--secondary-colour);
-    box-shadow: 1px 1px 2px #8d4f02;
+    box-shadow: 0px 0px 3px #422502;
     display: flex;
     justify-content: center;
     gap: 50px;
@@ -20,10 +20,11 @@
     color: var(--primary-colour);
     font-size: 22px;
     font-weight: 600;
-    transition: transform 0.3s ease-in-out;
+    transition: transform 0.1s linear;
 }
 
 .link:hover {
+    color: var(--primary-colour-lighter);
     transform: scale(1.05);
 }
 

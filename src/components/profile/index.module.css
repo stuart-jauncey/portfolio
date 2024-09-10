@@ -6,6 +6,7 @@
 }
 
 .profile {
+    padding: 0px 10px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -17,11 +18,11 @@
     width: 260px;
     overflow: hidden;
     border: 3px solid var(--secondary-colour-lighter);
-    border-radius: 60% 40% 80% 20%;
-}
+    border-radius: 60% 40% 60% 30%;
 
-.imageContainer:hover {
-    animation: border-dance 3s infinite;
+    &:hover {
+        animation: border-dance 3s infinite;
+    }
 }
 
 .titleContainer {
@@ -45,6 +46,11 @@
 
 .highlight {
     color: var(--secondary-colour-lighter);
+    cursor: pointer;
+
+    &:hover {
+        color: var(--secondary-colour);
+    }
 }
 
 @media screen and (max-width: 1000px) {
@@ -58,6 +64,7 @@
     }
 
     .descriptionContainer {
+        font-size: 22px;
         margin: 10px;
         padding: 30px 10px;
     }
@@ -74,18 +81,18 @@
 
 @keyframes border-dance {
     0% {
-        border-radius: 60% 40% 80% 20%;
+        border-radius: 60% 40% 60% 30%;
     }
     25% {
-        border-radius: 20% 60% 40% 80%;
+        border-radius: 30% 60% 40% 60%;
     }
     50% {
-        border-radius: 80% 20% 60% 40%;
+        border-radius: 60% 30% 60% 40%;
     }
     75% {
-        border-radius: 40% 80% 20% 60%;
+        border-radius: 40% 60% 30% 60%;
     }
     100% {
-        border-radius: 60% 40% 80% 20%;
+        border-radius: 60% 40% 60% 30%;
     }
 }
