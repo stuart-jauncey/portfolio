@@ -19,9 +19,19 @@
     border: none;
     color: var(--primary-colour);
     font-size: 22px;
+    font-weight: 600;
     transition: transform 0.3s ease-in-out;
 }
 
 .link:hover {
     transform: scale(1.05);
+}
+
+@media screen and (max-width: 1000px) {
+    .root {
+        gap: 10px;
+    }
+    .link {
+        font-size: 18px;
+    }
 }

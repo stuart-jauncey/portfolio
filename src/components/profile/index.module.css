@@ -25,10 +25,15 @@
 }
 
 .titleContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
     text-align: end;
 }
 
 .descriptionContainer {
+    margin: 30px;
+    padding: 20px;
     font-size: 24px;
     display: flex;
     flex-direction: column;
@@ -40,6 +45,22 @@
 
 .highlight {
     color: var(--secondary-colour-lighter);
+}
+
+@media screen and (max-width: 1000px) {
+    .profile {
+        flex-direction: column;
+    }
+
+    .titleContainer {
+        margin-top: 20px;
+        text-align: center;
+    }
+
+    .descriptionContainer {
+        margin: 10px;
+        padding: 30px 10px;
+    }
 }
 
 @keyframes fade-in {

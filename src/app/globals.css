@@ -29,6 +29,15 @@ body {
     width: 65vw;
     padding: 30px;
     border-radius: 10px;
+    text-align: center;
+    overflow: auto;
+}
+
+@media screen and (max-width: 1000px) {
+    .main-container {
+        width: 90vw;
+        padding: 30px 10px;
+    }
 }
 
 h1,
@@ -40,6 +49,10 @@ h6,
 p {
     margin: 0;
     padding: 0;
+}
+
+h1 {
+    font-size: 30px;
 }
 
 h2 {
