@@ -7,13 +7,15 @@ export function Header() {
     return (
         <div className={styles.root}>
             <Link className={styles.link} href="/">
-                / PROFILE /
+                PROFILE
             </Link>
+            <p className={styles.link}>/</p>
             <Link className={styles.link} href="/projects">
-                / PROJECTS /
+                PROJECTS
             </Link>
+            <p className={styles.link}>/</p>
             <Link className={styles.link} href="/contact">
-                / CONTACT /
+                CONTACT
             </Link>
         </div>
     );
