@@ -1,9 +1,19 @@
 'use client';
 
 import Image from 'next/image';
-import { ReactElement, useState } from 'react';
+import { ReactElement, useEffect, useRef, useState } from 'react';
+
+import { MessageBubble } from './components/message-bubble';
 
 import classes from './index.module.css';
+
+export type Message = {
+    id: string;
+    name: string;
+    content: string;
+    alignment: 'left' | 'right';
+    imageURL?: string;
+};
 
 enum Images {
     Stu = 'https://res.cloudinary.com/stuj89/image/upload/v1725542567/Stu.jpg',
@@ -11,8 +21,89 @@ enum Images {
     Plymouth = 'https://res.cloudinary.com/stuj89/image/upload/v1725975436/Plymouth.jpg',
 }
 
+const messages: Message[] = [
+    {
+        id: '1',
+        name: 'Curious Person',
+        content:
+            'Hi! I saw your profile and just wanted to know a little more about you.',
+        alignment: 'right',
+    },
+    {
+        id: '2',
+        name: 'Stuart',
+        content:
+            'Hey! No problem, I am a fullstack software developer with 3 years experience.',
+        alignment: 'left',
+    },
+    {
+        id: '3',
+        name: 'Curious Person',
+        content: 'Where are you based?',
+        alignment: 'right',
+    },
+    {
+        id: '4',
+        name: 'Stuart',
+        content: 'I am based in Plymouth, England.',
+        alignment: 'left',
+        imageURL: Images.Plymouth,
+    },
+    {
+        id: '5',
+        name: 'Curious Person',
+        content: 'Do you have any pets?',
+        alignment: 'right',
+    },
+    {
+        id: '6',
+        name: 'Stuart',
+        content: 'Yes! I have two dogs, Luna and Albert.',
+        alignment: 'left',
+        imageURL: Images.Dogs,
+    },
+    {
+        id: '7',
+        name: 'Stuart',
+        content: 'Thanks for taking out the time to learn more about me!',
+        alignment: 'left',
+        imageURL: Images.Stu,
+    },
+];
+
 export function Profile() {
+    const [currentMessages, setCurrentMessages] = useState<Message[]>([]);
     const [imagePath, setImagePath] = useState<string>(Images.Stu);
+    const scrollAnchorRef = useRef<HTMLDivElement>(null);
+
+    const scrollToBottom = () => {
+        if (scrollAnchorRef.current) {
+            scrollAnchorRef.current.scrollIntoView({
+                behavior: 'smooth',
+                block: 'end',
+            });
+        }
+    };
+
+    useEffect(() => {
+        const currentMessagesLength = currentMessages.length;
+        scrollToBottom();
+
+        const addMessage = (message: Message) =>
+            setTimeout(() => {
+                setCurrentMessages([...currentMessages, message]);
+
+                setTimeout(() => {
+                    if (message.imageURL) {
+                        setImagePath(message.imageURL);
+                    }
+                }, 2000);
+            }, 3000);
+
+        if (currentMessages.length < messages.length) {
+            addMessage(messages[currentMessagesLength]);
+        }
+    }, [currentMessages]);
 
     const profile: ReactElement = (
         <div className={classes.profile}>
@@ -32,45 +123,29 @@ export function Profile() {
         </div>
     );
 
-    const description: ReactElement = (
-        <div className={classes.descriptionContainer}>
-            <div>
-                <p>
-                    My name is{' '}
-                    <span
-                        className={classes.highlight}
-                        onMouseEnter={() => setImagePath(Images.Stu)}
-                    >
-                        Stuart
-                    </span>{' '}
-                    and I am a fullstack software developer.
-                </p>
-            </div>
-            <div>
-                <p>
-                    I live in{' '}
-                    <span
-                        className={classes.highlight}
-                        onMouseEnter={() => setImagePath(Images.Plymouth)}
-                    >
-                        Plymouth
-                    </span>
-                    , England with my wife and{' '}
-                    <span
-                        className={classes.highlight}
-                        onMouseEnter={() => setImagePath(Images.Dogs)}
-                    >
-                        two dogs.
-                    </span>
-                </p>
-            </div>
+    const messageLog: ReactElement = (
+        <div className={classes.messageContainer}>
+            {currentMessages.map((message) => {
+                return (
+                    <MessageBubble
+                        key={message.id}
+                        name={message.name}
+                        content={message.content}
+                        alignment={message.alignment}
+                    />
+                );
+            })}
+            <div ref={scrollAnchorRef} className={classes.scrollAnchor}></div>
         </div>
     );
 
     return (
         <div className={classes.root}>
             {profile}
-            {description}
+            <h3 className={classes.subtitle}>
+                YOU ARE NOW CHATTING WITH STUART
+            </h3>
+            {messageLog}
         </div>
     );
 }
