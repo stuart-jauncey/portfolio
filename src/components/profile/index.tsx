@@ -142,9 +142,6 @@ export function Profile() {
     return (
         <div className={classes.root}>
             {profile}
-            <h3 className={classes.subtitle}>
-                YOU ARE NOW CHATTING WITH STUART
-            </h3>
             {messageLog}
         </div>
     );

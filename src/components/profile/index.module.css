@@ -34,6 +34,7 @@
 }
 
 .messageContainer {
+    padding: 5px;
     overflow: auto;
     scrollbar-width: none;
     display: flex;

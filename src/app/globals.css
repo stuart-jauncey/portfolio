@@ -4,17 +4,27 @@
     background-color: black;
     user-select: none;
 
-    --primary-colour: #051821;
+    /* --primary-colour: #051821;
     --primary-colour-lighter: #1a4645;
     --secondary-colour: #f58800;
     --secondary-colour-lighter: #f8bc24;
-    --background-colour: #266867;
+    --background-colour: #266867; */
+
+    --primary-colour: #070496;
+    --primary-colour-lighter: #1174c5;
+    --secondary-colour: #000000;
+    --secondary-colour-lighter: #c7c6c6;
 }
 
 body {
     margin: 0;
     margin-top: 40px;
-    background-color: var(--background-colour);
+    background: radial-gradient(
+        #1411c5 0%,
+        #000000 20%,
+        #1411c5 65%,
+        #05042c 100%
+    );
     height: calc(100vh - 40px);
     padding: 30px 0px;
     box-sizing: border-box;
@@ -24,7 +34,8 @@ body {
 
 .main-container {
     box-sizing: border-box;
-    background: var(--primary-colour);
+    background: var(--secondary-colour);
+    box-shadow: 1px 1px 3px var(--secondary-colour);
     max-width: 800px;
     width: 65vw;
     padding: 30px;

@@ -9,11 +9,11 @@ export function Header() {
             <Link className={styles.link} href="/">
                 PROFILE
             </Link>
-            <p className={styles.link}>/</p>
+            <p>/</p>
             <Link className={styles.link} href="/projects">
                 PROJECTS
             </Link>
-            <p className={styles.link}>/</p>
+            <p>/</p>
             <Link className={styles.link} href="/contact">
                 CONTACT
             </Link>

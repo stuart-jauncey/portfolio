@@ -5,26 +5,24 @@
     width: 100vw;
     height: 40px;
     background: var(--secondary-colour);
-    box-shadow: 0px 0px 3px #422502;
+    box-shadow: 0px 0px 3px var(--secondary-colour);
     display: flex;
+    align-items: center;
     justify-content: center;
     gap: 50px;
+    color: var(--secondary-colour-lighter);
+    font-size: 22px;
+    font-weight: 600;
 }
 
 .link {
-    display: flex;
-    align-items: center;
     text-decoration: none;
-    background: none;
-    border: none;
-    color: var(--primary-colour);
-    font-size: 22px;
-    font-weight: 600;
+    color: inherit;
     transition: transform 0.1s linear;
 }
 
 .link:hover {
-    color: var(--primary-colour-lighter);
+    color: #ffffff;
     transform: scale(1.05);
 }
 
