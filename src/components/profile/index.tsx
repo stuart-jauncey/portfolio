@@ -1,7 +1,7 @@
 'use client';
 
 import Image from 'next/image';
-import { ReactElement, useEffect, useRef, useState } from 'react';
+import { Fragment, ReactElement, useEffect, useRef, useState } from 'react';
 
 import { MessageBubble } from './components/message-bubble';
 
@@ -52,18 +52,31 @@ const messages: Message[] = [
     {
         id: '5',
         name: 'Curious Person',
-        content: 'Do you have any pets?',
+        content: 'What coding languages do you know?',
         alignment: 'right',
     },
     {
         id: '6',
+        name: 'Stuart',
+        content:
+            'I know HTML, CSS, JavaScript, React.js, PHP, Laravel, TypeScript and Next.js.',
+        alignment: 'left',
+    },
+    {
+        id: '7',
+        name: 'Curious Person',
+        content: 'Do you have any pets?',
+        alignment: 'right',
+    },
+    {
+        id: '8',
         name: 'Stuart',
         content: 'Yes! I have two dogs, Luna and Albert.',
         alignment: 'left',
         imageURL: Images.Dogs,
     },
     {
-        id: '7',
+        id: '9',
         name: 'Stuart',
         content: 'Thanks for taking out the time to learn more about me!',
         alignment: 'left',
@@ -123,6 +136,18 @@ export function Profile() {
         </div>
     );
 
+    const loadingElement: ReactElement = (
+        <div className={classes.loadingMessage}>
+            <h1>Connecting...</h1>
+        </div>
+    );
+
+    const dateTimeElement: ReactElement = (
+        <p className={classes.dateTime}>
+            Today {new Date().toTimeString().slice(0, 5)}
+        </p>
+    );
+
     const messageLog: ReactElement = (
         <div className={classes.messageContainer}>
             {currentMessages.map((message) => {
@@ -142,7 +167,14 @@ export function Profile() {
     return (
         <div className={classes.root}>
             {profile}
-            {messageLog}
+            {currentMessages.length === 0 ? (
+                loadingElement
+            ) : (
+                <Fragment>
+                    {dateTimeElement}
+                    {messageLog}
+                </Fragment>
+            )}
         </div>
     );
 }
