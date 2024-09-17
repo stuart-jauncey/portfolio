@@ -1,24 +1,23 @@
 .root {
-    padding: 8px 16px;
+    padding: 12px 16px;
     width: fit-content;
     display: flex;
     flex-direction: column;
     gap: 2px;
-    background: var(--primary-colour);
+    background: var(--secondary-colour);
     border-radius: 10px;
-    /* border: 1px solid var(--secondary-colour-lighter); */
-    box-shadow: 0px 0px 2px var(--secondary-colour-lighter);
     text-align: left;
     animation: message-fade-in 0.3s ease-out;
 }
 
 .left {
-    margin-right: 10vw;
+    background: var(--primary-colour);
+    margin-right: 15vw;
     align-self: flex-start;
 }
 
 .right {
-    margin-left: 10vw;
+    margin-left: 15vw;
     align-self: flex-end;
 }
 
