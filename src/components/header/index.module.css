@@ -4,13 +4,13 @@
     left: 0;
     width: 100vw;
     height: 40px;
-    background: var(--secondary-colour);
+    background: var(--secondary-colour-darker);
     box-shadow: 0px 0px 3px var(--secondary-colour);
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 50px;
-    color: var(--secondary-colour-lighter);
+    color: #ffffff;
     font-size: 22px;
     font-weight: 600;
 }
@@ -22,7 +22,7 @@
 }
 
 .link:hover {
-    color: #ffffff;
+    color: var(--secondary-colour-lighter);
     transform: scale(1.05);
 }
 
