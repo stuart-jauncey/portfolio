@@ -9,11 +9,11 @@ export function MessageBubble(props: Omit<Message, 'id'>) {
     const [messageState, setMessageState] = useState<MessageState>('typing');
 
     useEffect(() => {
-        const typingMessage = setTimeout(() => {
+        const pendingMessage = setTimeout(() => {
             setMessageState('sent');
         }, 2000);
 
-        return () => clearTimeout(typingMessage);
+        return () => clearTimeout(pendingMessage);
     }, []);
 
     const classNames = () => {
@@ -31,12 +31,7 @@ export function MessageBubble(props: Omit<Message, 'id'>) {
             );
         }
 
-        return (
-            <Fragment>
-                <p className={classes.name}>{props.name}</p>
-                <p className={classes.content}>{props.content}</p>
-            </Fragment>
-        );
+        return <p className={classes.content}>{props.content}</p>;
     };
 
     return <div className={classNames()}>{renderMessage()}</div>;
