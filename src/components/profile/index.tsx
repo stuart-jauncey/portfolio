@@ -95,7 +95,7 @@ const messages: Message[] = [
         id: '11',
         name: 'Stuart',
         content:
-            "You're very welcome! If you would like to know more please don' hesitate to get it touch.",
+            "You're very welcome! If you would like to know more please don't hesitate to get it touch.",
         alignment: 'left',
         imageURL: Images.Stu,
     },
