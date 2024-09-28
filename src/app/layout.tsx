@@ -1,6 +1,8 @@
-import type { Metadata } from 'next';
-import { Header } from 'app/components/header';
 import { Inter } from 'next/font/google';
+import type { Metadata } from 'next';
+import { SpeedInsights } from '@vercel/speed-insights/next';
+
+import { Header } from 'app/components/header';
 
 import './globals.css';
 
@@ -20,6 +22,7 @@ export default function RootLayout({
                 <Header />
                 <main className={`${inter.className} main-container`}>
                     {children}
+                    <SpeedInsights />
                 </main>
             </body>
         </html>
