@@ -140,7 +140,7 @@ export function Profile() {
             <div className={classes.imageContainer}>
                 <Image
                     src={imagePath}
-                    alt="Stu"
+                    alt="Profile Picture"
                     fill
                     sizes="100%"
                     priority

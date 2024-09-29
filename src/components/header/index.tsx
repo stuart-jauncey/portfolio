@@ -5,18 +5,18 @@ import styles from './index.module.css';
 
 export function Header() {
     return (
-        <div className={styles.root}>
+        <header className={styles.root}>
             <Link className={styles.link} href="/">
-                PROFILE
+                <h2>PROFILE</h2>
             </Link>
-            <p>/</p>
+            <span>/</span>
             <Link className={styles.link} href="/projects">
-                PROJECTS
+                <h2>PROJECTS</h2>
             </Link>
-            <p>/</p>
+            <span>/</span>
             <Link className={styles.link} href="/contact">
-                CONTACT
+                <h2>CONTACT</h2>
             </Link>
-        </div>
+        </header>
     );
 }

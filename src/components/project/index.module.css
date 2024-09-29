@@ -1,0 +1,10 @@
+.root {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+
+    &:global {
+        animation: fade-in 0.6s ease-in;
+    }
+}

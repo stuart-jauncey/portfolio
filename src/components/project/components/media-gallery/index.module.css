@@ -1,0 +1,16 @@
+.mediaGallery {
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.imageContainer {
+    position: relative;
+    height: 45vw;
+    width: 70vw;
+    max-width: 700px;
+    max-height: 400px;
+    border: 1px solid var(--secondary-colour);
+    box-shadow: 0px 0px 2px var(--secondary-colour);
+}
