@@ -1,4 +1,4 @@
-import { Fragment, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import classes from './index.module.css';
 
 import { Message } from 'app/components/profile';
