@@ -3,7 +3,10 @@
     flex-direction: column;
     gap: 20px;
     height: 100%;
-    animation: fade-in 0.6s ease-in;
+
+    &:global {
+        animation: fade-in 0.6s ease-in;
+    }
 }
 
 .profile {
@@ -42,6 +45,7 @@
 .messageContainer {
     padding: 5px;
     overflow: auto;
+    overflow-anchor: none;
     scrollbar-width: none;
     display: flex;
     flex-direction: column;
@@ -77,12 +81,15 @@
     }
 }
 
-@keyframes fade-in {
+@keyframes fade-in-out {
     0% {
         opacity: 0;
     }
-    100% {
+    50% {
         opacity: 1;
+    }
+    100% {
+        opacity: 0;
     }
 }
 
