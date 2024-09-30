@@ -1,7 +1,7 @@
 'use client';
 
 import { Project } from 'app/components/project';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
 export type ImageType = {
     title: string;
@@ -59,13 +59,7 @@ const projects: ProjectType[] = [
 ];
 
 export default function Page() {
-    const [currentProject, setCurrentProject] = useState<ProjectType | null>(
-        null
-    );
-
-    useEffect(() => {
-        setCurrentProject(() => projects[0]);
-    }, []);
+    const [currentProject, setCurrentProject] = useState<ProjectType | null>(projects[0]);
 
     return <Project project={currentProject} />;
 }

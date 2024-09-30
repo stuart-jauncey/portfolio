@@ -1,0 +1,99 @@
+.root {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    height: 100%;
+
+    &:global {
+        animation: fade-in 0.6s ease-in;
+    }
+}
+
+.section {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.copyText {
+    color: #fff;
+    font-size: 1.6rem;
+    cursor: pointer;
+
+    &:hover {
+        color: var(--primary-colour-lighter);
+    }
+}
+
+.linkContainer {
+    display: flex;
+    justify-content: center;
+    row-gap: 10px;
+    column-gap: 40px;
+    flex-wrap: wrap;
+}
+
+.link {
+    width: 100px;
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+
+    &:hover {
+        color: var(--primary-colour-lighter);
+    }
+}
+
+.link > svg {
+    height: 100px;
+    width: 100px;
+
+    &:hover {
+        animation: wiggle linear 0.6s;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .linkContainer {
+        column-gap: 25px;
+    }
+
+    .link {
+        width: 65px;
+    }
+
+    .link > svg {
+        height: 65px;
+        width: 65px;
+    }
+}
+
+@keyframes wiggle {
+    0% {
+        transform: rotate3d(0, 0, 0, 0deg);
+        scale: 1;
+    }
+
+    25% {
+        transform: rotate3d(1, 2, 3, 10deg);
+        scale: 1.1;
+    }
+
+    50% {
+        transform: rotate3d(0, 0, 0, 0deg);
+        scale: 1;
+    }
+
+    75% {
+        transform: rotate3d(1, 2, 3, -10deg);
+        scale: 0.9;
+    }
+
+    100% {
+        transform: rotate3d(0, 0, 0, 0deg);
+        scale: 1;
+    }
+}
