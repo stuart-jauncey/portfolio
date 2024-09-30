@@ -18,12 +18,13 @@
 .link {
     text-decoration: none;
     color: inherit;
-    transition: transform 0.1s linear;
+    transition: scale 0.2s linear;
+    scale: 1.01;
 }
 
 .link:hover {
-    color: var(--secondary-colour-lighter);
-    transform: scale(1.05);
+    color: var(--primary-colour-lighter);
+    scale: 1.05;
 }
 
 @media screen and (max-width: 1000px) {
