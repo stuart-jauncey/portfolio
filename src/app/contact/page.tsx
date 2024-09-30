@@ -1,7 +1,5 @@
+import Contact from 'app/components/contact';
+
 export default function Page() {
-    return (
-        <div>
-            <h1>Coming Soon</h1>
-        </div>
-    );
+    return <Contact />;
 }
