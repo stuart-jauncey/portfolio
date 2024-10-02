@@ -42,7 +42,7 @@
 }
 
 .messageContainer {
-    padding: 5px;
+    padding: 5px 0px;
     overflow: auto;
     overflow-anchor: none;
     scrollbar-width: none;
