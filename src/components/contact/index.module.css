@@ -15,9 +15,8 @@
     gap: 15px;
 }
 
-.copyText {
+.emailText {
     color: #fff;
-    font-size: 1.6rem;
     cursor: pointer;
 
     &:hover {
@@ -58,7 +57,7 @@
 
 @media screen and (max-width: 1000px) {
     .linkContainer {
-        column-gap: 25px;
+        column-gap: 30px;
     }
 
     .link {
