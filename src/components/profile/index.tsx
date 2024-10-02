@@ -15,9 +15,10 @@ export type Message = {
 };
 
 enum Images {
-    Stu = 'https://res.cloudinary.com/stuj89/image/upload/v1725542567/Stu.jpg',
+    Bass = 'https://res.cloudinary.com/stuj89/image/upload/c_fill,h_190,w_260/v1727908272/Bass_Stu.jpg',
     Dogs = 'https://res.cloudinary.com/stuj89/image/upload/v1725972735/Dogs.jpg',
     Plymouth = 'https://res.cloudinary.com/stuj89/image/upload/v1725975436/Plymouth.jpg',
+    Stu = 'https://res.cloudinary.com/stuj89/image/upload/v1725542567/Stu.jpg',
 }
 
 const messages: Message[] = [
@@ -40,7 +41,7 @@ const messages: Message[] = [
     },
     {
         id: '4',
-        content: 'Thanks! I live in the city of Plymouth, Devon on the south coast of England.',
+        content: 'I live in the city of Plymouth, Devon on the south coast of England.',
         alignment: 'left',
         imageURL: Images.Plymouth,
     },
@@ -57,54 +58,34 @@ const messages: Message[] = [
     },
     {
         id: '7',
-        content: 'I am also familiar with Git practices and Agile methodologies.',
-        alignment: 'left',
+        content: 'Okay, so moving away from the keyboard, what do you like to do outside of work?',
+        alignment: 'right',
     },
     {
         id: '8',
-        content: 'What would you say are your greatest strengths as a developer?',
-        alignment: 'right',
+        content:
+            'My main interests include football, snooker, tennis and video games. I also play bass guitar in a band!',
+        alignment: 'left',
+        imageURL: Images.Bass,
     },
     {
         id: '9',
-        content:
-            "I'd say my team collaboration, attention to detail, determination to always succeed and positive attitude make me a great asset to any team.",
-        alignment: 'left',
-    },
-    {
-        id: '10',
-        content: "That's great to hear! Okay, enough about all that, what do you like to do outside of work?",
-        alignment: 'right',
-    },
-    {
-        id: '11',
-        content: 'I really enjoy working on personal projects to learn new technologies and skills.',
-        alignment: 'left',
-    },
-    {
-        id: '12',
-        content:
-            'Away from the computer my other interests include football, snooker, tennis, video games and anything funny on TV!',
-        alignment: 'left',
-    },
-    {
-        id: '13',
         content: 'Nice! Now the most important question... do you have any pets?',
         alignment: 'right',
     },
     {
-        id: '14',
+        id: '10',
         content: 'Yes I do! I have two dogs, Luna and Albert.',
         alignment: 'left',
         imageURL: Images.Dogs,
     },
     {
-        id: '15',
+        id: '11',
         content: 'So cute! Thank you for your time Stuart, it was a pleasure getting to know more about you!',
         alignment: 'right',
     },
     {
-        id: '16',
+        id: '12',
         content:
             "You're very welcome! If you would like to know more please don't hesitate to get in touch using the Contact tab at the top of the screen.",
         alignment: 'left',
