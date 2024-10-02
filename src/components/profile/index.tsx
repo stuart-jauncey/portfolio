@@ -9,7 +9,6 @@ import classes from './index.module.css';
 
 export type Message = {
     id: string;
-    name: string;
     content: string;
     alignment: 'left' | 'right';
     imageURL?: string;
@@ -24,78 +23,90 @@ enum Images {
 const messages: Message[] = [
     {
         id: '1',
-        name: 'Curious Person',
         content:
-            'Hi! I saw your profile and was wondering if I could ask you a few questions about what you do?',
+            'Hi Stuart! I saw your profile and was wondering if I could ask you a few questions about what you do?',
         alignment: 'right',
     },
     {
         id: '2',
-        name: 'Stuart',
         content:
             'Hey, thank you for reaching out! I am a fullstack software developer with three years experience of working at a fast paced logistics marketplace start-up.',
         alignment: 'left',
     },
     {
         id: '3',
-        name: 'Curious Person',
         content: "That's great! Where are you based?",
         alignment: 'right',
     },
     {
         id: '4',
-        name: 'Stuart',
-        content:
-            'I live in the city of Plymouth, which is on the south coast of Devon, England.',
+        content: 'Thanks! I live in the city of Plymouth, Devon on the south coast of England.',
         alignment: 'left',
         imageURL: Images.Plymouth,
     },
     {
         id: '5',
-        name: 'Curious Person',
-        content:
-            'What programming languages and technologies have you worked with?',
+        content: 'Looks nice! What programming languages and technologies have you worked with?',
         alignment: 'right',
     },
     {
         id: '6',
-        name: 'Stuart',
         content:
-            'I have experience working with HTML, CSS, JavaScript, React.js, PHP, Laravel, TypeScript, Next.js, MongoDB and SQL.',
+            "It's a great place to live! I mainly have experience working with JavaScript, TypeScript, React.js, PHP and Laravel.",
         alignment: 'left',
     },
     {
         id: '7',
-        name: 'Stuart',
-        content:
-            'I am also familiar with Git practices and Agile methodologies.',
+        content: 'I am also familiar with Git practices and Agile methodologies.',
         alignment: 'left',
     },
     {
         id: '8',
-        name: 'Curious Person',
-        content: 'Do you have any pets?',
+        content: 'What would you say are your greatest strengths as a developer?',
         alignment: 'right',
     },
     {
         id: '9',
-        name: 'Stuart',
-        content: 'Yes! I have two dogs, Luna and Albert.',
+        content:
+            "I'd say my team collaboration, attention to detail, determination to always succeed and positive attitude make me a great asset to any team.",
         alignment: 'left',
-        imageURL: Images.Dogs,
     },
     {
         id: '10',
-        name: 'Curious Person',
-        content:
-            'Thank you for your time Stuart, it was a pleasure getting to know more about you!',
+        content: "That's great to hear! Okay, enough about all that, what do you like to do outside of work?",
         alignment: 'right',
     },
     {
         id: '11',
-        name: 'Stuart',
+        content: 'I really enjoy working on personal projects to learn new technologies and skills.',
+        alignment: 'left',
+    },
+    {
+        id: '12',
         content:
-            "You're very welcome! If you would like to know more please don't hesitate to get it touch.",
+            'Away from the computer my other interests include football, snooker, tennis, video games and anything funny on TV!',
+        alignment: 'left',
+    },
+    {
+        id: '13',
+        content: 'Nice! Now the most important question... do you have any pets?',
+        alignment: 'right',
+    },
+    {
+        id: '14',
+        content: 'Yes I do! I have two dogs, Luna and Albert.',
+        alignment: 'left',
+        imageURL: Images.Dogs,
+    },
+    {
+        id: '15',
+        content: 'So cute! Thank you for your time Stuart, it was a pleasure getting to know more about you!',
+        alignment: 'right',
+    },
+    {
+        id: '16',
+        content:
+            "You're very welcome! If you would like to know more please don't hesitate to get in touch using the Contact tab at the top of the screen.",
         alignment: 'left',
         imageURL: Images.Stu,
     },
@@ -135,24 +146,6 @@ export function Profile() {
         }
     }, [currentMessages]);
 
-    const profile: ReactElement = (
-        <div className={classes.profile}>
-            <div className={classes.imageContainer}>
-                <Image
-                    src={imagePath}
-                    alt="Profile Picture"
-                    fill
-                    sizes="100%"
-                    priority
-                ></Image>
-            </div>
-            <div className={classes.titleContainer}>
-                <h1>Stuart Jauncey</h1>
-                <h2>Fullstack Software Developer</h2>
-            </div>
-        </div>
-    );
-
     const loadingElement: ReactElement = (
         <div className={classes.loadingMessage}>
             <h1>Connecting...</h1>
@@ -160,22 +153,13 @@ export function Profile() {
     );
 
     const dateTimeElement: ReactElement = (
-        <p className={classes.dateTime}>
-            Today {new Date().toTimeString().slice(0, 5)}
-        </p>
+        <p className={classes.dateTime}>Today {new Date().toTimeString().slice(0, 5)}</p>
     );
 
     const messageLog: ReactElement = (
         <div className={classes.messageContainer}>
             {currentMessages.map((message) => {
-                return (
-                    <MessageBubble
-                        key={message.id}
-                        name={message.name}
-                        content={message.content}
-                        alignment={message.alignment}
-                    />
-                );
+                return <MessageBubble key={message.id} content={message.content} alignment={message.alignment} />;
             })}
             <div ref={scrollAnchorRef} className={classes.scrollAnchor}></div>
         </div>
@@ -183,7 +167,15 @@ export function Profile() {
 
     return (
         <div className={classes.root}>
-            {profile}
+            <div className={classes.profile}>
+                <div className={classes.imageContainer}>
+                    <Image src={imagePath} alt="Profile Picture" fill sizes="100%" priority></Image>
+                </div>
+                <div className={classes.titleContainer}>
+                    <h1>Stuart Jauncey</h1>
+                    <h2>Fullstack Software Developer</h2>
+                </div>
+            </div>
             {currentMessages.length === 0 ? (
                 loadingElement
             ) : (

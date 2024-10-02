@@ -12,12 +12,12 @@
 
 .left {
     background: var(--primary-colour);
-    margin-right: 15vw;
+    margin-right: 10vw;
     align-self: flex-start;
 }
 
 .right {
-    margin-left: 15vw;
+    margin-left: 10vw;
     align-self: flex-end;
 }
 

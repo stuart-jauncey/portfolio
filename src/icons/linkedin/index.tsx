@@ -2,7 +2,7 @@ import { ReactNode } from 'react';
 
 export function LinkedInIcon(): ReactNode {
     return (
-        <svg x="0px" y="0px" width="100" height="100" viewBox="0 0 48 48">
+        <svg viewBox="0 0 48 48" fill="currentColor">
             <path
                 fill="#0078d4"
                 d="M42,37c0,2.762-2.238,5-5,5H11c-2.761,0-5-2.238-5-5V11c0-2.762,2.239-5,5-5h26c2.762,0,5,2.238,5,5	V37z"

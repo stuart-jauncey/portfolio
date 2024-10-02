@@ -1,8 +1,15 @@
+import { useEffect, useState } from 'react';
+
 import MediaGallery from './components/media-gallery';
 import { ProjectType } from 'app/app/projects/page';
 
+import { ReactIcon } from 'app/icons/react';
+import { TypeScriptIcon } from 'app/icons/typescript';
+import { PHPIcon } from 'app/icons/php';
+import { LaravelIcon } from 'app/icons/laravel';
+import { MongoDBIcon } from 'app/icons/mongo-db';
+
 import classes from './index.module.css';
-import { useEffect, useState } from 'react';
 
 type ProjectProps = {
     project: ProjectType | null;
@@ -37,7 +44,13 @@ export function Project(props: ProjectProps) {
             <h1>{props.project.name}</h1>
             <p>{props.project.description}</p>
             <p>{props.project.role}</p>
-            <p>{props.project.techStack}</p>
+            <div className={classes.iconContainer}>
+                <ReactIcon />
+                <TypeScriptIcon />
+                <PHPIcon />
+                <LaravelIcon />
+                <MongoDBIcon />
+            </div>
             <MediaGallery content={props.project.images[currentImageIndex]} />
         </div>
     );
