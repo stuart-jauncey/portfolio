@@ -8,3 +8,13 @@
         animation: fade-in 0.6s ease-in;
     }
 }
+
+.iconContainer {
+    display: flex;
+    gap: 20px;
+}
+
+.iconContainer > svg {
+    height: 50px;
+    width: 50px;
+}
