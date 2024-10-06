@@ -1,16 +1,14 @@
-.mediaGallery {
-    padding: 15px;
+.root {
+    position: relative;
+    width: 800px;
     display: flex;
-    flex-direction: column;
     gap: 20px;
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
 }
 
 .imageContainer {
-    position: relative;
-    height: 45vw;
-    width: 70vw;
-    max-width: 700px;
-    max-height: 400px;
-    border: 1px solid var(--secondary-colour);
-    box-shadow: 0px 0px 2px var(--secondary-colour);
+    margin: 20px 0px;
+    width: 800px;
+    scroll-snap-align: center;
 }
