@@ -47,13 +47,12 @@ const messages: Message[] = [
     },
     {
         id: '5',
-        content: 'Looks nice! What programming languages and technologies have you worked with?',
+        content: 'Looks nice! What programming languages have you worked with?',
         alignment: 'right',
     },
     {
         id: '6',
-        content:
-            "It's a great place to live! I mainly have experience working with JavaScript, TypeScript, React.js, PHP and Laravel.",
+        content: 'I mainly have experience working with JavaScript, TypeScript, React.js, PHP and Laravel.',
         alignment: 'left',
     },
     {
@@ -87,7 +86,7 @@ const messages: Message[] = [
     {
         id: '12',
         content:
-            "You're very welcome! If you would like to know more please don't hesitate to get in touch using the Contact tab at the top of the screen.",
+            "You're very welcome! If you would like to know more please get in touch by using the Contact tab at the top of the screen.",
         alignment: 'left',
         imageURL: Images.Stu,
     },
