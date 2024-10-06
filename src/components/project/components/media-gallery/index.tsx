@@ -3,7 +3,7 @@ import classes from './index.module.css';
 import { ImageType } from 'app/app/projects/page';
 
 type MediaGalleryProps = {
-    content: ImageType | null;
+    content: ImageType[] | null;
 };
 
 export default function MediaGallery(props: MediaGalleryProps) {
@@ -11,18 +11,16 @@ export default function MediaGallery(props: MediaGalleryProps) {
         return null;
     }
 
-    return (
-        <div className={classes.mediaGallery}>
-            <h3>{props.content.title}</h3>
-            <div className={classes.imageContainer}>
-                <Image
-                    src={props.content.url}
-                    alt="Project Image"
-                    fill
-                    sizes="100%"
-                    priority
-                ></Image>
+    const contents = props.content.map((media) => {
+        return (
+            <div key={media.title} className={classes.mediaContainer}>
+                <h3>{media.title}</h3>
+                <div className={classes.imageContainer}>
+                    <Image src={media.url} alt="Project Image" width={700} height={380} priority></Image>
+                </div>
             </div>
-        </div>
-    );
+        );
+    });
+
+    return <div className={classes.root}>{contents}</div>;
 }

@@ -1,0 +1,63 @@
+.root {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.iconContainer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+}
+
+.icon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    text-transform: capitalize;
+}
+
+.icon:nth-child(1) > svg {
+    animation: pop-in 1s ease-in-out forwards;
+}
+
+.icon:nth-child(2) > svg {
+    animation: pop-in 1s 0.5s ease-in-out forwards;
+}
+
+.icon:nth-child(3) > svg {
+    animation: pop-in 1s 1s ease-in-out forwards;
+}
+
+.icon:nth-child(4) > svg {
+    animation: pop-in 1s 1.5s ease-in-out forwards;
+}
+
+.icon:nth-child(5) > svg {
+    animation: pop-in 1s 2s ease-in-out forwards;
+}
+
+.icon > svg {
+    opacity: 0;
+    height: 60px;
+    width: 60px;
+}
+
+@keyframes pop-in {
+    0% {
+        opacity: 0;
+        scale: 0;
+    }
+
+    50% {
+        scale: 1.2;
+    }
+
+    100% {
+        opacity: 1;
+        scale: 1;
+    }
+}

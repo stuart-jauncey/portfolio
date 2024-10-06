@@ -13,7 +13,7 @@ export type ProjectType = {
     name: string;
     description: string;
     role: string;
-    techStack: string;
+    techStack: string[];
     images: ImageType[];
 };
 
@@ -24,7 +24,7 @@ const projects: ProjectType[] = [
         description:
             'Developed by Shift, Smart Flows is a SaaS customer journey support system which allows you to build out website flows using pre-made components. The flows can then be embedded into websites or popups and can capture end user data and fetch data via a third party endpoint.',
         role: 'As part of a three person team I played an integral part in the design, development and testing of Smart Flows.',
-        techStack: 'Built with React.js, TypeScript, PHP and Laravel.',
+        techStack: ['react', 'typeScript', 'PHP', 'laravel', 'mongoDB'],
         images: [
             {
                 title: 'Home Page',
