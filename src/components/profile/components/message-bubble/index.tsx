@@ -5,16 +5,26 @@ import { Message } from 'app/components/profile';
 
 type MessageState = 'typing' | 'sent';
 
-export function MessageBubble(props: Omit<Message, 'id'>) {
+type MessageBubbleProps = Omit<Message, 'id'> & {
+    scrollToBottom: () => void;
+};
+
+export function MessageBubble(props: MessageBubbleProps) {
+    const { scrollToBottom } = props;
     const [messageState, setMessageState] = useState<MessageState>('typing');
 
     useEffect(() => {
         const pendingMessage = setTimeout(() => {
             setMessageState('sent');
+
+            // Scrolls the message container once a message is 'sent'
+            setTimeout(() => {
+                scrollToBottom();
+            }, 1);
         }, 2000);
 
         return () => clearTimeout(pendingMessage);
-    }, []);
+    }, [scrollToBottom]);
 
     const classNames = () => {
         return `${classes.root} ${classes[props.alignment]}`;
