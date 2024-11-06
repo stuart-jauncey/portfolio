@@ -1,7 +1,7 @@
 'use client';
 
 import Image from 'next/image';
-import { Fragment, ReactElement, useEffect, useRef, useState } from 'react';
+import { Fragment, ReactElement, useCallback, useEffect, useRef, useState } from 'react';
 
 import { MessageBubble } from './components/message-bubble';
 
@@ -97,14 +97,14 @@ export function Profile() {
     const [imagePath, setImagePath] = useState<string>(Images.Stu);
     const scrollAnchorRef = useRef<HTMLDivElement>(null);
 
-    const scrollToBottom = () => {
+    const scrollToBottom = useCallback(() => {
         if (scrollAnchorRef.current) {
             scrollAnchorRef.current.scrollIntoView({
                 behavior: 'smooth',
                 block: 'end',
             });
         }
-    };
+    }, []);
 
     useEffect(() => {
         const currentMessagesLength = currentMessages.length;
@@ -124,7 +124,7 @@ export function Profile() {
         if (currentMessages.length < messages.length) {
             addMessage(messages[currentMessagesLength]);
         }
-    }, [currentMessages]);
+    }, [currentMessages, scrollToBottom]);
 
     const loadingElement: ReactElement = (
         <div className={classes.loadingMessage}>
@@ -139,7 +139,14 @@ export function Profile() {
     const messageLog: ReactElement = (
         <div className={classes.messageContainer}>
             {currentMessages.map((message) => {
-                return <MessageBubble key={message.id} content={message.content} alignment={message.alignment} />;
+                return (
+                    <MessageBubble
+                        key={message.id}
+                        content={message.content}
+                        alignment={message.alignment}
+                        scrollToBottom={scrollToBottom}
+                    />
+                );
             })}
             <div ref={scrollAnchorRef} className={classes.scrollAnchor}></div>
         </div>

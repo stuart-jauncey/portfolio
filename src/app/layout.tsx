@@ -9,13 +9,11 @@ import './globals.css';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-    title: 'Stuart Jauncey Portfolio',
-    description: 'Stuart Jauncey Portfolio',
+    title: 'Stuart Jauncey',
+    description: 'Stuart Jauncey',
 };
 
-export default function RootLayout({
-    children,
-}: Readonly<{ children: React.ReactNode }>) {
+export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
     return (
         <html lang="en">
             <body>

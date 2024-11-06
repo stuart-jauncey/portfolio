@@ -61,7 +61,7 @@
 }
 
 .scrollAnchor {
-    min-height: 20px;
+    min-height: 0px;
 }
 
 @media screen and (max-width: 1000px) {
